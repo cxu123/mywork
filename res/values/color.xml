@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- <color name="statusbar_bg">#21282A</color> -->
+    <color name="statusbar_bg">#EE7424</color>
+    <color name="main_color">#EE7424</color>
+    <color name="wrord_color">#878B8A</color>
+    <color name="wrord_red">#E71E19</color>
+    <color name="word_org">#EE7424</color>
+    <color name="word_black">#1E1F1F</color>
+
+</resources>
