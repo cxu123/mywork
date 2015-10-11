@@ -43,7 +43,16 @@ public class ViewPageHelp {
 	private int hasChageView = 0;
 	private boolean flage = true;
 	private int newimageview = 0;
+	private Thread thread;
+	private final Handler handler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			if (viewpage != null) {
 
+				viewpage.setCurrentItem(msg.what, true);
+				// setFlagImageChange(msg.what);
+			}
+		};
+	};
 	public ViewPageHelp(Context context, ViewPager viewpage,
 			ViewGroup flagLayout) {
 		this.context = context;
@@ -134,44 +143,9 @@ public class ViewPageHelp {
 		};
 		viewpage.setAdapter(pagerAdapter);
 		setFlagImageChange(0);
-		final Handler handler = new Handler() {
-			public void handleMessage(android.os.Message msg) {
-				if (viewpage != null) {
+		
+		changestart();
 
-					viewpage.setCurrentItem(msg.what, true);
-					// setFlagImageChange(msg.what);
-				}
-			};
-		};
-
-		Runnable runnable = new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				while (flage) {
-					if (viewpage != null) {
-						if (newimageview == 5) {
-							newimageview = 0;
-						}
-						Message msg = Message.obtain();
-						msg.what = newimageview;
-						handler.sendMessage(msg);
-						newimageview++;
-						try {
-							Thread.sleep(3000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-
-				}
-				L.i("广告停止");
-			}
-		};
-		Thread thread = new Thread(runnable);
-		thread.start();
 		viewpage.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -197,6 +171,42 @@ public class ViewPageHelp {
 		});
 
 	}
+	
+	
+	private void changestart(){
+		Runnable runnable = new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while (flage) {
+					if (viewpage != null) {
+						if (newimageview == 5) {
+							newimageview = 0;
+						}
+						Message msg = Message.obtain();
+						msg.what = newimageview;
+						if(handler!=null){
+							handler.sendMessage(msg);
+						}
+						
+						
+						newimageview++;
+						try {
+							Thread.sleep(3000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+
+				}
+				L.i("广告停止");
+			}
+		};
+		thread = new Thread(runnable);
+		thread.start();
+	}
 
 	/**
 	 * 设置flag的imagview变图片
@@ -212,6 +222,19 @@ public class ViewPageHelp {
 
 	public void close() {
 		flage = false;
+		L.v("被关闭");
+	}
+
+	public void start() {
+		if (!flage) {
+			flage = true;
+			if (thread != null) {
+				changestart();
+				L.v("被开启");
+			}
+
+		}
+
 	}
 
 	/**

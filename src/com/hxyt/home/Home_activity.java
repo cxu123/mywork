@@ -217,7 +217,7 @@ public class Home_activity extends BaseFragmentActivity {
 				if (homeFrament != null) {
 					// 开启一个Fragment事务
 					transaction.hide(homeFrament);
-
+					app.viewPageHelp.close();
 				}
 				// one.setImageDrawable(new Drawable(checkColor));#FF5654
 				// one.setBackgroundColor(Color.parseColor("#FF5654"));
@@ -268,6 +268,7 @@ public class Home_activity extends BaseFragmentActivity {
 				if (homeFrament != null) {
 					// 开启一个Fragment事务
 					transaction.show(homeFrament);
+					app.viewPageHelp.start();
 				} else {
 					homeFrament = new HomeFrament();
 					L.v("创建首页");
@@ -529,6 +530,7 @@ public class Home_activity extends BaseFragmentActivity {
 	protected void onRestart() {
 		// TODO Auto-generated method stub
 		super.onRestart();
+		app.viewPageHelp.start();
 		L.e("Home Restart");
 	}
 
@@ -536,6 +538,7 @@ public class Home_activity extends BaseFragmentActivity {
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
+		app.viewPageHelp.close();
 		L.e("Home stop");
 	}
 
