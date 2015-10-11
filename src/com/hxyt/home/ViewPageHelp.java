@@ -44,6 +44,7 @@ public class ViewPageHelp {
 	private boolean flage = true;
 	private int newimageview = 0;
 	private Thread thread;
+	private Runnable runnable;
 	private final Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (viewpage != null) {
@@ -53,6 +54,7 @@ public class ViewPageHelp {
 			}
 		};
 	};
+
 	public ViewPageHelp(Context context, ViewPager viewpage,
 			ViewGroup flagLayout) {
 		this.context = context;
@@ -143,7 +145,7 @@ public class ViewPageHelp {
 		};
 		viewpage.setAdapter(pagerAdapter);
 		setFlagImageChange(0);
-		
+
 		changestart();
 
 		viewpage.setOnPageChangeListener(new OnPageChangeListener() {
@@ -171,10 +173,9 @@ public class ViewPageHelp {
 		});
 
 	}
-	
-	
-	private void changestart(){
-		Runnable runnable = new Runnable() {
+
+	private void changestart() {
+		runnable = new Runnable() {
 
 			@Override
 			public void run() {
@@ -186,17 +187,16 @@ public class ViewPageHelp {
 						}
 						Message msg = Message.obtain();
 						msg.what = newimageview;
-						if(handler!=null){
+						if (handler != null) {
 							handler.sendMessage(msg);
 						}
-						
-						
 						newimageview++;
 						try {
 							Thread.sleep(3000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
-							e.printStackTrace();
+							return;
+							// e.printStackTrace();
 						}
 					}
 
@@ -205,6 +205,7 @@ public class ViewPageHelp {
 			}
 		};
 		thread = new Thread(runnable);
+
 		thread.start();
 	}
 
@@ -222,6 +223,9 @@ public class ViewPageHelp {
 
 	public void close() {
 		flage = false;
+		if (thread != null) {
+			thread.interrupt();
+		}
 		L.v("被关闭");
 	}
 
