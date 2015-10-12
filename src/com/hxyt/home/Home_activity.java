@@ -200,7 +200,8 @@ public class Home_activity extends BaseFragmentActivity {
 	 * UI显示隐藏处理事件
 	 * 
 	 * @param id
-	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 3、包含的UI有5、注册 3、用户登录 6、用户协议
+	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 
+	 *            {3、包含的UI有 (5、注册 3、用户登录 6、用户协议)}
 	 * 
 	 */
 	private void hideFragmentsAndChangeImage(int id) {

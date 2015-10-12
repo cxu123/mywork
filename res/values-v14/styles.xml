@@ -40,10 +40,11 @@
         <item name="android:backgroundDimAmount">0.1</item>
         <!-- 模糊 -->
     </style>
-
+<!-- loading_view_alpha_show -->
+<!-- loading_view_alpha_dismiss -->
     <style name="loading_view_animstyle">
-        <item name="android:windowEnterAnimation">@anim/loading_view_show</item>
-        <item name="android:windowExitAnimation">@anim/loading_view_dismiss</item>
+        <item name="android:windowEnterAnimation">@anim/loading_view_alpha_dismiss</item>
+        <item name="android:windowExitAnimation">@anim/loading_view_alpha_show</item>
     </style>
 
 </resources>

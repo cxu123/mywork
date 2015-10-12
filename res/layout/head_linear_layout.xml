@@ -30,7 +30,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/head_left"
@@ -40,7 +40,7 @@
             android:layout_toRightOf="@+id/head_left_image"
             android:gravity="left|center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/head_right"
@@ -51,7 +51,7 @@
             android:layout_marginRight="17dp"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
     </RelativeLayout>
 

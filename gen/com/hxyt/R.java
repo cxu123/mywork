@@ -15,16 +15,18 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040003;
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
-        public static final int loading_view_dismiss=0x7f040006;
-        public static final int loading_view_show=0x7f040007;
-        public static final int modal_in=0x7f040008;
-        public static final int modal_out=0x7f040009;
-        public static final int push_right_in=0x7f04000a;
-        public static final int push_right_out=0x7f04000b;
-        public static final int reverse_anim=0x7f04000c;
-        public static final int rotating=0x7f04000d;
-        public static final int zoomin=0x7f04000e;
-        public static final int zoomout=0x7f04000f;
+        public static final int loading_view_alpha_dismiss=0x7f040006;
+        public static final int loading_view_alpha_show=0x7f040007;
+        public static final int loading_view_dismiss=0x7f040008;
+        public static final int loading_view_show=0x7f040009;
+        public static final int modal_in=0x7f04000a;
+        public static final int modal_out=0x7f04000b;
+        public static final int push_right_in=0x7f04000c;
+        public static final int push_right_out=0x7f04000d;
+        public static final int reverse_anim=0x7f04000e;
+        public static final int rotating=0x7f04000f;
+        public static final int zoomin=0x7f040010;
+        public static final int zoomout=0x7f040011;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 

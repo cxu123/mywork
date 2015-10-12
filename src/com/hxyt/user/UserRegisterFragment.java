@@ -6,6 +6,7 @@ import com.hxyt.utils.SMSBroadcastReceiver;
 
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -49,8 +50,8 @@ public class UserRegisterFragment extends Fragment {
 	/**
 	 * 获得验证码的冷却时间
 	 */
-	private int getCodeTime=300;
-	
+	private int getCodeTime = 30;
+
 	private static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
 
 	@Override
@@ -81,7 +82,8 @@ public class UserRegisterFragment extends Fragment {
 		goto_login = (Button) rootView.findViewById(R.id.goto_login);
 		need_user_check = (ImageView) rootView
 				.findViewById(R.id.need_user_check);
-		read_user_agreement=(Button) rootView.findViewById(R.id.read_user_agreement);
+		read_user_agreement = (Button) rootView
+				.findViewById(R.id.read_user_agreement);
 	}
 
 	private void setViewClickLister() {
@@ -122,40 +124,72 @@ public class UserRegisterFragment extends Fragment {
 			}
 		});
 		need_user_check.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				userAgreementFlage=(userAgreementFlage==false?true:false);
+				userAgreementFlage = (userAgreementFlage == false ? true
+						: false);
 				if (userAgreementFlage) {
 					need_user_check.setImageResource(R.drawable.user_check);
-				}else {
+				} else {
 					need_user_check.setImageResource(R.drawable.user_uncheck);
 				}
 				L.v(userAgreementFlage);
 			}
 		});
 		read_user_agreement.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if (userRegisterLister!=null) {
+				if (userRegisterLister != null) {
 					userRegisterLister.readUserAgreement();
 				}
-				
+
+			}
+		});
+
+		get_verification_code.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				getVerificationCode();
+				goNext();
 			}
 		});
 	}
-	
-	
+
 	/**
 	 * 获得验证码
 	 */
-	private void getVerificationCode(){
-		
+	private void getVerificationCode() {
+
+		if ((!TextUtils.isEmpty(user_verification_code.getText()) && (user_verification_code
+				.getText().length() == 11))) {
+			userModel.setVerificationCodeListener(new Handler(){
+				@Override
+				public void handleMessage(Message msg) {
+					// TODO Auto-generated method stub
+					super.handleMessage(msg);
+					
+						Toast.makeText(getActivity(), (String)msg.obj, Toast.LENGTH_SHORT)
+						.show();
+					
+//						Toast.makeText(getActivity(), (String)msg.obj, Toast.LENGTH_SHORT)
+//						.show();
+					
+				}
+			});
+			userModel.getVerificationCode(user_verification_code.getText()
+					.toString(), getActivity());
+		} else {
+			Toast.makeText(getActivity(), "请输入正确的手机号码", Toast.LENGTH_SHORT)
+					.show();
+		}
+
 	}
-	
 
 	/**
 	 * 用户注册
@@ -179,7 +213,8 @@ public class UserRegisterFragment extends Fragment {
 			return;
 		}
 		if (!userAgreementFlage) {
-			Toast.makeText(getActivity(), "请输仔细阅读用户协议并且并同意", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), "请输仔细阅读用户协议并且并同意", Toast.LENGTH_SHORT)
+					.show();
 			return;
 		}
 		userModel.setUserRegisterListener(new Handler() {
@@ -229,6 +264,29 @@ public class UserRegisterFragment extends Fragment {
 						}
 					}
 				});
+	}
+
+	/**
+	 * 时间计数器
+	 */
+	protected void goNext() {
+		new CountDownTimer(60 * 1000, 1000) {
+			@Override
+			public void onFinish() {
+				// done
+				getCodeTime = 60;
+				get_verification_code.setEnabled(true);
+				get_verification_code.setText("发送验证码");
+			}
+
+			@Override
+			public void onTick(long arg0) {
+				// 每1000毫秒回调的方法
+				get_verification_code.setEnabled(false);
+				get_verification_code.setText(getCodeTime--+"s");
+			}
+
+		}.start();
 	}
 
 	/**

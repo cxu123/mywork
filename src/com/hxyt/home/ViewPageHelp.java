@@ -185,12 +185,6 @@ public class ViewPageHelp {
 						if (newimageview == 5) {
 							newimageview = 0;
 						}
-						Message msg = Message.obtain();
-						msg.what = newimageview;
-						if (handler != null) {
-							handler.sendMessage(msg);
-						}
-						newimageview++;
 						try {
 							Thread.sleep(3000);
 						} catch (InterruptedException e) {
@@ -198,6 +192,13 @@ public class ViewPageHelp {
 							return;
 							// e.printStackTrace();
 						}
+						Message msg = Message.obtain();
+						msg.what = newimageview;
+						if (handler != null) {
+							handler.sendMessage(msg);
+						}
+						newimageview++;
+						
 					}
 
 				}
