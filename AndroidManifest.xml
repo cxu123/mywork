@@ -47,7 +47,10 @@
         <activity android:name="com.hxyt.other.GuidanceActivity" />
         <activity android:name="com.hxyt.order.OrderInfoActivity" />
         <activity android:name="com.hxyt.other.testActivity"></activity>
-        
+        <activity android:name="com.baofoo.sdk.BaofooPayActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
         
         <service android:name="com.hxyt.utils.DownLoadAPP" >
         </service>
