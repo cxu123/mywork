@@ -255,11 +255,15 @@ public class Home_activity extends BaseFragmentActivity {
 				if (userRegionFragment != null) {
 					transaction.hide(userRegionFragment);
 				}
+				three.setBackgroundResource(R.drawable.my);
+				imageStrMy.setTextColor(Color.parseColor("#1E1F1F"));
 				break;
 			case 6:
 				if (userAgreement != null) {
-					transaction.hide(userAgreement);
+					transaction.remove(userAgreement);
 				}
+				three.setBackgroundResource(R.drawable.my);
+				imageStrMy.setTextColor(Color.parseColor("#1E1F1F"));
 				break;
 			}
 

@@ -8,5 +8,6 @@
     <color name="wrord_red">#E71E19</color>
     <color name="word_org">#EE7424</color>
     <color name="word_black">#1E1F1F</color>
-
+<!-- 	透明颜色 -->
+	<color name="LucencyColor">#00000000</color>
 </resources>

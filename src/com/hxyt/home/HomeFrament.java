@@ -3,6 +3,7 @@ package com.hxyt.home;
 import com.hxyt.AppContent;
 import com.hxyt.R;
 import com.hxyt.order.OrderInfoActivity;
+import com.hxyt.other.testActivity;
 import com.hxyt.utils.CallPhone;
 import com.hxyt.utils.L;
 
@@ -80,7 +81,8 @@ public class HomeFrament extends Fragment {
 	    @Override
 	    public void onClick(View v) {
 		// TODO Auto-generated method stub
-		CallPhone.call("4000256756", getActivity());
+		//CallPhone.call("4000256756", getActivity());
+	    	getActivity().startActivity(new Intent(getActivity(),testActivity.class));
 	    }
 	});
 	chageimage.setOnClickListener(new OnClickListener() {

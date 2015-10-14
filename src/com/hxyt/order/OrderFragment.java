@@ -76,7 +76,7 @@ public class OrderFragment extends Fragment {
 					.findViewById(R.id.pullableListView1);
 			pullToRefreshLayout = (PullToRefreshLayout) view
 					.findViewById(R.id.PullLayout);
-			loadingView = new LoadingView(getActivity());
+			loadingView = new LoadingView(getActivity(),1);
 			loadingView.show();
 			iniData();
 

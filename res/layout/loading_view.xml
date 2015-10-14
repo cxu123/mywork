@@ -21,6 +21,6 @@
         android:gravity="center|left"
         android:text="@string/loading_text"
         android:textSize="22sp" />
-"
+
 
 </LinearLayout>

@@ -50,7 +50,7 @@ public class UserRegisterFragment extends Fragment {
 	/**
 	 * 获得验证码的冷却时间
 	 */
-	private int getCodeTime = 30;
+	private int getCodeTime = 120;
 
 	private static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
 
@@ -156,7 +156,7 @@ public class UserRegisterFragment extends Fragment {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getVerificationCode();
-				goNext();
+
 			}
 		});
 	}
@@ -165,24 +165,28 @@ public class UserRegisterFragment extends Fragment {
 	 * 获得验证码
 	 */
 	private void getVerificationCode() {
-
-		if ((!TextUtils.isEmpty(user_verification_code.getText()) && (user_verification_code
-				.getText().length() == 11))) {
-			userModel.setVerificationCodeListener(new Handler(){
+		
+		if ((!TextUtils.isEmpty(user_name.getText())) && (user_name
+				.getText().length() == 11)) {
+			userModel.setVerificationCodeListener(new Handler() {
 				@Override
 				public void handleMessage(Message msg) {
 					// TODO Auto-generated method stub
 					super.handleMessage(msg);
-					
-						Toast.makeText(getActivity(), (String)msg.obj, Toast.LENGTH_SHORT)
-						.show();
-					
-//						Toast.makeText(getActivity(), (String)msg.obj, Toast.LENGTH_SHORT)
-//						.show();
-					
+					if (msg.what == 1) {
+						goNext();
+						
+					}
+					Toast.makeText(getActivity(), (String) msg.obj,
+							Toast.LENGTH_SHORT).show();
+					goNext();
+					// Toast.makeText(getActivity(), (String)msg.obj,
+					// Toast.LENGTH_SHORT)
+					// .show();
+
 				}
 			});
-			userModel.getVerificationCode(user_verification_code.getText()
+			userModel.getVerificationCode(user_name.getText()
 					.toString(), getActivity());
 		} else {
 			Toast.makeText(getActivity(), "请输入正确的手机号码", Toast.LENGTH_SHORT)
@@ -270,11 +274,11 @@ public class UserRegisterFragment extends Fragment {
 	 * 时间计数器
 	 */
 	protected void goNext() {
-		new CountDownTimer(60 * 1000, 1000) {
+		new CountDownTimer(120 * 1000, 1000) {
 			@Override
 			public void onFinish() {
 				// done
-				getCodeTime = 60;
+				getCodeTime = 120;
 				get_verification_code.setEnabled(true);
 				get_verification_code.setText("发送验证码");
 			}
@@ -283,7 +287,7 @@ public class UserRegisterFragment extends Fragment {
 			public void onTick(long arg0) {
 				// 每1000毫秒回调的方法
 				get_verification_code.setEnabled(false);
-				get_verification_code.setText(getCodeTime--+"s");
+				get_verification_code.setText((--getCodeTime) + "s");
 			}
 
 		}.start();

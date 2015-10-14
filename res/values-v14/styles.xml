@@ -33,7 +33,8 @@
         <item name="android:windowNoTitle">true</item>
         <!-- 无标题 -->
         <!-- <item name="android:windowBackground">@android:color/transparent</item> -->
-        <item name="android:windowBackground">@color/statusbar_bg</item>
+       
+        <item name="android:windowBackground">@color/LucencyColor</item>
         <!-- 自己想要的背景 -->
         <item name="android:backgroundDimEnabled">false</item>
         <!-- 0代表完全透明 1代表不透明 -->

@@ -2,8 +2,8 @@
 <!-- 黄色button加圆角 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <corners android:radius="5dp" />
+    <corners android:radius="50dp" />
 
-    <solid android:color="#EE7424" />
+    <solid android:color="#0996EA" />
 
 </shape>
