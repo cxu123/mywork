@@ -4,7 +4,6 @@ import com.hxyt.view.PullToRefreshLayout.Pullable;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.ListView;
 
 
@@ -31,8 +30,12 @@ public class PullableListView extends ListView implements Pullable
 	public PullableListView(Context context, AttributeSet attrs, int defStyle)
 	{
 		super(context, attrs, defStyle);
+	
 	}
 
+	
+
+	
 	@Override
 	public boolean canPullDown()
 	{
@@ -63,8 +66,24 @@ public class PullableListView extends ListView implements Pullable
 					&& getChildAt(
 							getLastVisiblePosition()
 									- getFirstVisiblePosition()).getBottom() <= getMeasuredHeight())
+			{
 				return true;
+			}
 		}
 		return false;
 	}
+
+//	@Override
+//	public void onScrollStateChanged(AbsListView view, int scrollState) {
+//		// TODO Auto-generated method stub
+//		L.v("scrollState="+scrollState);
+//	}
+//
+//	@Override
+//	public void onScroll(AbsListView view, int firstVisibleItem,
+//			int visibleItemCount, int totalItemCount) {
+//		// TODO Auto-generated method stub
+//		L.v("visibleItemCount="+visibleItemCount);
+//		L.v("visibleItemCount="+totalItemCount);
+//	}
 }

@@ -11,7 +11,6 @@ import com.hxyt.utils.T;
 import com.hxyt.view.LoadingView;
 import com.hxyt.view.PullToRefreshLayout;
 import com.hxyt.view.PullToRefreshLayout.OnRefreshListener;
-import com.hxyt.view.PullToRefreshView;
 import com.hxyt.view.PullableListView;
 
 import android.app.SearchManager.OnCancelListener;
@@ -25,8 +24,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SimpleAdapter;
@@ -183,6 +184,24 @@ public class OrderFragment extends Fragment {
 						.toString());
 			}
 		});
+		
+		pullableListView.setOnScrollListener(new OnScrollListener() {
+			
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+				// TODO Auto-generated method stub
+				L.v("scrollState="+scrollState);
+			}
+			
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				// TODO Auto-generated method stub
+				L.v("visibleItemCount="+visibleItemCount);
+				L.v("visibleItemCount="+totalItemCount);
+			}
+		});
+		
 	}
 
 	/**
