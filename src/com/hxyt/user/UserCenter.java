@@ -18,7 +18,7 @@ import android.view.ViewGroup;
  */
 public class UserCenter extends Fragment {
 
-	@Override
+	@Override 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

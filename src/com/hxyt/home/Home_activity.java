@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.hxyt.AppContent;
 import com.hxyt.BaseActivity;
 import com.hxyt.BaseFragmentActivity;
 import com.hxyt.R;
@@ -162,7 +163,7 @@ public class Home_activity extends BaseFragmentActivity {
 			@Override
 			public void gotoUserLogin() {
 				// TODO Auto-generated method stub
-				userIntFlag=1;
+				userIntFlag = 1;
 				hideFragmentsAndChangeImage(3);
 			}
 		};
@@ -200,8 +201,8 @@ public class Home_activity extends BaseFragmentActivity {
 	 * UI显示隐藏处理事件
 	 * 
 	 * @param id
-	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 
-	 *            {3、包含的UI有 (5、注册 3、用户登录 6、用户协议)}
+	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 {3、包含的UI有 (5、注册 3、用户登录
+	 *            6、用户协议)}
 	 * 
 	 */
 	private void hideFragmentsAndChangeImage(int id) {
@@ -317,7 +318,7 @@ public class Home_activity extends BaseFragmentActivity {
 						// userAgreement.
 						transaction.add(R.id.id_content, userRegionFragment);
 					}
-					id=5;
+					id = 5;
 					userRegionIni();
 					three.setBackgroundResource(R.drawable.my_selecte);
 					imageStrMy.setTextColor(Color.parseColor(checkColor));
@@ -331,7 +332,7 @@ public class Home_activity extends BaseFragmentActivity {
 						// userAgreement.
 						transaction.add(R.id.id_content, userAgreement);
 					}
-					id=6;
+					id = 6;
 					userAgreementIni();
 					three.setBackgroundResource(R.drawable.my_selecte);
 					imageStrMy.setTextColor(Color.parseColor(checkColor));
@@ -423,7 +424,7 @@ public class Home_activity extends BaseFragmentActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				// L.v("点击了");
-				userIntFlag=1;
+				userIntFlag = 1;
 				hideFragmentsAndChangeImage(3);
 			}
 		});
@@ -432,7 +433,7 @@ public class Home_activity extends BaseFragmentActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				userIntFlag=1;
+				userIntFlag = 1;
 				hideFragmentsAndChangeImage(3);
 			}
 		});
@@ -535,7 +536,14 @@ public class Home_activity extends BaseFragmentActivity {
 	protected void onRestart() {
 		// TODO Auto-generated method stub
 		super.onRestart();
-		app.viewPageHelp.start();
+		if (app != null) {
+			if (app.viewPageHelp != null) {
+				app.viewPageHelp.start();
+			}
+		} else {
+			app = (AppContent) getApplication();
+		}
+
 		L.e("Home Restart");
 	}
 
@@ -543,7 +551,14 @@ public class Home_activity extends BaseFragmentActivity {
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		app.viewPageHelp.close();
+		if (app != null) {
+			if (app.viewPageHelp != null) {
+				app.viewPageHelp.close();
+			}
+		} else {
+			app = (AppContent) getApplication();
+		}
+
 		L.e("Home stop");
 	}
 

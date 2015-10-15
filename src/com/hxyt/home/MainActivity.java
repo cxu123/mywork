@@ -90,7 +90,7 @@ public class MainActivity extends BaseActivity {
 
 	private void checkUpErrLog() {
 		HttpJsonTool httpJsonTool = new HttpJsonTool(this);
-		httpJsonTool.checkLogAndUpload(this);
+		//httpJsonTool.checkLogAndUpload(this);
 	}
 
 	// 创建app说需要的文件夹如app更新文件夹、app临时文件夹等

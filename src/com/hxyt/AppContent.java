@@ -3,6 +3,7 @@ package com.hxyt;
 import com.hxyt.home.HomeModle;
 import com.hxyt.home.ViewPageHelp;
 import com.hxyt.utils.AppManager;
+import com.hxyt.utils.CrashHandler;
 import com.hxyt.utils.L;
 import com.hxyt.utils.T;
 import com.lidroid.xutils.util.PreferencesCookieStore;
@@ -44,6 +45,8 @@ public class AppContent extends Application {
 		appManager=AppManager.getAppManager();
 		//下载广告图片
 		downloadImage();
+		CrashHandler crashHandler=CrashHandler.getInstance();
+		crashHandler.init(this);
 	}
 	
 	public static void setPreferencesCookieStore(
