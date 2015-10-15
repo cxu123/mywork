@@ -90,9 +90,18 @@ public class Base64Util {
 	}
 
 	private final static String HEX = "0123456789ABCDEF";
+	
+	//private final static String HEX = "E80D39B567A2CF41";
 
 	private static void appendHex(StringBuffer sb, byte b) {
 		sb.append(HEX.charAt((b >> 4) & 0x0f)).append(HEX.charAt(b & 0x0f));
 	}
 
+	public static void main(String[] args) {
+		String str="1234";
+		String pw=Base64Util.toHex(str);
+		System.out.println("加密有的密码："+pw);
+		String pw_old=Base64Util.fromHex(pw);
+		System.out.println("还原后的密码："+pw_old);
+	}
 }

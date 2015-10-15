@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import cn.jpush.android.api.JPushInterface;
+
 import com.hxyt.BaseActivity;
 import com.hxyt.ProjectCommand;
 import com.hxyt.R;
@@ -85,7 +87,8 @@ public class MainActivity extends BaseActivity {
 		} else {
 			openActivity(GuidanceActivity.class);
 		}
-
+		//启动极光推送
+		JPushInterface.resumePush(getApplicationContext());
 	}
 
 	private void checkUpErrLog() {
@@ -142,5 +145,20 @@ public class MainActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		gesture.setTouchEvent(ev);
 		return super.dispatchTouchEvent(ev);
+	}
+	
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		JPushInterface.onResume(this);
+		super.onResume();
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		JPushInterface.onPause(this);
+		super.onPause();
 	}
 }

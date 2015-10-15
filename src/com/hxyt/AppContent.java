@@ -1,5 +1,7 @@
 package com.hxyt;
 
+import cn.jpush.android.api.JPushInterface;
+
 import com.hxyt.home.HomeModle;
 import com.hxyt.home.ViewPageHelp;
 import com.hxyt.utils.AppManager;
@@ -46,7 +48,9 @@ public class AppContent extends Application {
 		//下载广告图片
 		downloadImage();
 		CrashHandler crashHandler=CrashHandler.getInstance();
-		crashHandler.init(this);
+		//crashHandler.init(this);
+		JPushInterface.setDebugMode(true);
+		JPushInterface.init(this);
 	}
 	
 	public static void setPreferencesCookieStore(
