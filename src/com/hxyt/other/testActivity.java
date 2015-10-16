@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import com.baofoo.sdk.BaofooPayActivity;
 import com.hxyt.BaseActivity;
 import com.hxyt.R;
 import com.hxyt.baofoo.BaoFooPayUtils;
+import com.hxyt.utils.WebViewPlayHelper;
 import com.hxyt.view.LoadingView;
 
 /**
@@ -27,6 +29,12 @@ public class testActivity extends BaseActivity {
 
 	Button button;
 
+	Button play_video;
+
+	WebView play_view;
+
+	WebViewPlayHelper webViewPlayHelper;
+
 	@Override
 	protected void findViews() {
 		// TODO Auto-generated method stub
@@ -38,6 +46,8 @@ public class testActivity extends BaseActivity {
 		loadingView.show();
 		payresult = (TextView) findViewById(R.id.payresult);
 		button = (Button) findViewById(R.id.startpay);
+		play_video = (Button) findViewById(R.id.play_video);
+		play_view = (WebView) findViewById(R.id.play_view);
 	}
 
 	@Override
@@ -59,6 +69,15 @@ public class testActivity extends BaseActivity {
 			}
 		});
 
+		play_video.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				webViewPlayHelper = new WebViewPlayHelper(play_view, null);
+			}
+		});
+
 	}
 
 	@Override
@@ -77,6 +96,24 @@ public class testActivity extends BaseActivity {
 
 			}
 
+		}
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		if (webViewPlayHelper != null) {
+			webViewPlayHelper.onPause();
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		if (webViewPlayHelper != null) {
+			webViewPlayHelper.onResume();
 		}
 	}
 
