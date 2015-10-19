@@ -97,6 +97,7 @@ public final class R {
         public static final int button2=0x7f080017;
         public static final int call_us=0x7f08002e;
         public static final int chageimage=0x7f08002f;
+        public static final int cycloidalMenu1=0x7f08004b;
         public static final int down=0x7f080032;
         public static final int down_tv=0x7f080027;
         public static final int exitGuid=0x7f080006;
@@ -183,6 +184,7 @@ public final class R {
         public static final int loading_beat_view=0x7f030011;
         public static final int loading_view=0x7f030012;
         public static final int refresh_head=0x7f030013;
+        public static final int test_cycloidal_menu=0x7f030014;
     }
     public static final class string {
         public static final int app_name=0x7f060000;

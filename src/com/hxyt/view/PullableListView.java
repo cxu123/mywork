@@ -39,6 +39,9 @@ public class PullableListView extends ListView implements Pullable
 	@Override
 	public boolean canPullDown()
 	{
+		if (getChildAt(0)==null) {
+			return true;
+		}
 		if (getCount() == 0)
 		{
 			// 没有item的时候也可以下拉刷新

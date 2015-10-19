@@ -102,7 +102,7 @@
             android:id="@+id/call_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="联系客服" />
+            android:text="test activity" />
 
         <Button
             android:id="@+id/chageimage"
