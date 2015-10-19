@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <com.hxyt.view.CycloidalMenu
+        android:id="@+id/cycloidalMenu1"
+        android:layout_width="match_parent"
+        android:background="#aa3344"
+        android:layout_height="500dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:background="#07d2a4"
+            android:text="左边显示内容" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#e8e727"
+            android:text="圆盘最左边View" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55b2e5"
+            android:text="圆盘最右边View" />
+    </com.hxyt.view.CycloidalMenu>
+
+</LinearLayout>
