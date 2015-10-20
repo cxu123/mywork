@@ -44,7 +44,7 @@ public class HomeFrament extends Fragment {
 		if (savedInstanceState != null) {
 			return super.onCreateView(inflater, container, savedInstanceState);
 		} else {
-			View view = inflater.inflate(R.layout.fragment_home, container,
+			View view = inflater.inflate(R.layout.fragment_home_copy, container,
 					false);
 			strart_ActiButton = (Button) view.findViewById(R.id.button1);
 			viewPager = (ViewPager) view.findViewById(R.id.ad_viewpage);
@@ -64,36 +64,8 @@ public class HomeFrament extends Fragment {
 	}
 
 	private void iniClick() {
-		strart_ActiButton.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(getActivity(),
-						OrderInfoActivity.class);
-				getActivity().startActivity(intent);
 
-			}
-		});
-
-		call_us.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				// CallPhone.call("4000256756", getActivity());
-				getActivity().startActivity(
-						new Intent(getActivity(), testActivity.class));
-			}
-		});
-		chageimage.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				app.viewPageHelp.changeViewPagerImage();
-			}
-		});
 	}
 
 	@Override

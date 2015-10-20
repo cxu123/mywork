@@ -321,7 +321,16 @@ public class UserRegisterFragment extends Fragment {
 		// TODO Auto-generated method stub
 		super.onDestroyView();
 		if (getActivity() != null) {
-			getActivity().unregisterReceiver(mSMSBroadcastReceiver);
+			if (mSMSBroadcastReceiver!=null) {
+				getActivity().unregisterReceiver(mSMSBroadcastReceiver);
+			}
+//			try {
+//				getActivity().unregisterReceiver(mSMSBroadcastReceiver);
+//				//getActivity().r
+//			} catch (IllegalArgumentException e) {
+//				// TODO: handle exception
+//			return;
+//			}
 			L.v("解除广播注册");
 		}
 

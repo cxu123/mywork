@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				openActivity(Home_activity.class);
+				openActivity(HomeActivity.class);
 			}
 		});
 

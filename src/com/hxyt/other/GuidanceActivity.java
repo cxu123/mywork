@@ -21,7 +21,7 @@ import android.widget.LinearLayout;
 
 import com.hxyt.BaseActivity;
 import com.hxyt.R;
-import com.hxyt.home.Home_activity;
+import com.hxyt.home.HomeActivity;
 import com.hxyt.utils.SPUtils;
 
 /**
@@ -114,7 +114,7 @@ public class GuidanceActivity extends Activity {
 	    @Override
 	    public void onClick(View v) {
 		// TODO Auto-generated method stub
-		startActivity(new Intent(GuidanceActivity.this,Home_activity.class));
+		startActivity(new Intent(GuidanceActivity.this,HomeActivity.class));
 		GuidanceActivity.this.finish();
 		//overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
 		overridePendingTransition(R.anim.zoomin, R.anim.zoomout);

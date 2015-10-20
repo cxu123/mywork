@@ -7,7 +7,10 @@
     <color name="wrord_color">#878B8A</color>
     <color name="wrord_red">#E71E19</color>
     <color name="word_org">#EE7424</color>
-    <color name="word_black">#1E1F1F</color>
+<!--     字体黑色 -->
+    <color name="word_black">#383A3A</color>
+<!--     灰色 -->
+     <color name="word_gray">#7F8382</color>
 <!-- 	透明颜色 -->
 	<color name="LucencyColor">#00000000</color>
 </resources>

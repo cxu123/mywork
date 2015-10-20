@@ -42,4 +42,12 @@
         <item name="android:windowExitAnimation">@anim/loading_view_dismiss</item>
     </style>
 
+    <style name="lager_textSize">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="small_textSize">
+        <item name="android:textSize">10sp</item>
+    </style>
+   
+    
 </resources>

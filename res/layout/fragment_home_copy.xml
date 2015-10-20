@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D7DA"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <view
+            android:id="@+id/ad_viewpage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="android.support.v4.view.ViewPager" />
+
+        <LinearLayout
+            android:id="@+id/flagLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" >
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/circular_view_org" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/circular_view_org" />
+
+            <View
+                android:id="@+id/tag_3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/circular_view_org" />
+
+            <View
+                android:id="@+id/tag_2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/circular_view_org" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/circular_view_org" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <ImageView
+                android:id="@+id/project_sum_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/project_total" />
+
+            <TextView
+                android:id="@+id/project_sum_str"
+                style="@style/small_textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/project_sum_image"
+                android:gravity="center_vertical"
+                android:text="项目总数"
+                android:textColor="@color/word_gray" />
+
+            <TextView
+                android:id="@+id/project_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/project_sum_str"
+                android:layout_below="@+id/project_sum_str"
+                android:text="100个"
+                android:textColor="@color/word_gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#d9dddd" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <ImageView
+                android:id="@+id/successful_financing_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/successful_financing_pic" />
+
+            <TextView
+                android:id="@+id/successful_financing_str"
+                style="@style/small_textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/successful_financing_image"
+                android:gravity="center_vertical"
+                android:text="成功筹资"
+                android:textColor="@color/word_gray" />
+
+            <TextView
+                android:id="@+id/successful_financing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/successful_financing_str"
+                android:layout_below="@+id/successful_financing_str"
+                android:text="100万"
+                android:textColor="@color/word_gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#d9dddd" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/trading_day_str"
+                style="@style/small_textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/trading_day_image"
+                android:gravity="center_vertical"
+                android:text="交易天数"
+                android:textColor="@color/word_gray" />
+
+            <ImageView
+                android:id="@+id/trading_day_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/trading_day_pic" />
+
+            <TextView
+                android:id="@+id/trading_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/trading_day_str"
+                android:layout_below="@+id/trading_day_str"
+                android:text="35天"
+                android:textColor="@color/word_gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" >
+
+            <!-- 热推项目 -->
+            <!-- 热推项目头 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="6dp" >
+
+                <TextView
+                    android:id="@+id/hot_project"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/hot_project_str"
+                    android:textColor="@color/word_black" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/investment_pic" />
+            </LinearLayout>
+            <!-- 热推项目头完 -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:padding="5dp"
+
+                android:background="#d9dddd" />
+            <!-- 热推项目item -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/hot_project_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/hot_project_pic" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/hot_project_flag_pic" />
+
+                <!-- 项目公司名称 -->
+
+                <TextView
+                    android:id="@+id/hot_project_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/hot_project_image"
+                    android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@+id/hot_project_image"
+                    android:text="@string/test_comany_name"
+                    android:textColor="@color/word_black" />
+
+                <TextView
+                    android:id="@+id/hot_project_company_abstract"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/hot_project_company_name"
+                    android:layout_below="@+id/hot_project_company_name"
+                    android:maxLength="50"
+                    android:text="@string/test_str"
+                    android:textColor="@color/word_gray" />
+            </RelativeLayout>
+            <!-- 热推项目item完成 -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#d9dddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="融资起点：￥1000"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/financing_progress_str"
+                    android:textColor="@color/word_gray" />
+                <!-- 融资进度 -->
+
+                <TextView
+                    android:id="@+id/hot_project_financing_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10%"
+                    android:textColor="@color/word_org" />
+            </LinearLayout>
+
+            <!-- 第2個項目 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/project_two_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/project_two_pic" />
+
+                <TextView
+                    android:id="@+id/project_two_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/project_two_image"
+                    android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@+id/project_two_image"
+                    android:text="@string/test_comany_name"
+                    android:textColor="@color/word_black" />
+
+                <TextView
+                    android:id="@+id/project_two_company_financing_origin_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/project_two_company_name"
+                    android:layout_below="@+id/project_two_company_name"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/financing_origin_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_two_company_financing_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_two_company_financing_origin_str"
+                    android:layout_alignBottom="@+id/project_two_company_financing_origin_str"
+                    android:layout_toRightOf="@+id/project_two_company_financing_origin_str"
+                    android:text="￥1000"
+                    android:textColor="@color/word_org" />
+
+                <TextView
+                    android:id="@+id/project_two_company_financing_progress_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/project_two_company_financing_origin_str"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/project_two_company_financing_origin"
+                    android:text="@string/financing_progress_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_two_company_financing_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_two_company_financing_progress_str"
+                    android:layout_alignBottom="@+id/project_two_company_financing_progress_str"
+                    android:layout_toRightOf="@+id/project_two_company_financing_progress_str"
+                    android:text="20%"
+                    android:textColor="@color/word_org" />
+
+                <ImageButton
+                    android:id="@+id/project_two_company_investment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/project_two_image"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/investment_button_pic" />
+            </RelativeLayout>
+            <!-- 第3個項目 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/project_three_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/project_two_pic" />
+
+                <TextView
+                    android:id="@+id/project_three_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/project_three_image"
+                    android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@+id/project_three_image"
+                    android:text="@string/test_comany_name"
+                    android:textColor="@color/word_black" />
+
+                <TextView
+                    android:id="@+id/project_three_company_financing_origin_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/project_three_company_name"
+                    android:layout_below="@+id/project_three_company_name"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/financing_origin_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_three_company_financing_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_three_company_financing_origin_str"
+                    android:layout_alignBottom="@+id/project_three_company_financing_origin_str"
+                    android:layout_toRightOf="@+id/project_three_company_financing_origin_str"
+                    android:text="￥1000"
+                    android:textColor="@color/word_org" />
+
+                <TextView
+                    android:id="@+id/project_three_company_financing_progress_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/project_three_company_financing_origin_str"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/project_three_company_financing_origin"
+                    android:text="@string/financing_progress_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_three_company_financing_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_three_company_financing_progress_str"
+                    android:layout_alignBottom="@+id/project_three_company_financing_progress_str"
+                    android:layout_toRightOf="@+id/project_three_company_financing_progress_str"
+                    android:text="20%"
+                    android:textColor="@color/word_org" />
+
+                <ImageButton
+                    android:id="@+id/project_three_company_investment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/project_three_image"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/investment_button_pic" />
+            </RelativeLayout>
+            <!-- 第3個項目 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/project_four_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/project_two_pic" />
+
+                <TextView
+                    android:id="@+id/project_four_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/project_four_image"
+                    android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@+id/project_four_image"
+                    android:text="@string/test_comany_name"
+                    android:textColor="@color/word_black" />
+
+                <TextView
+                    android:id="@+id/project_four_company_financing_origin_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/project_four_company_name"
+                    android:layout_below="@+id/project_four_company_name"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/financing_origin_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_four_company_financing_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_four_company_financing_origin_str"
+                    android:layout_alignBottom="@+id/project_four_company_financing_origin_str"
+                    android:layout_toRightOf="@+id/project_four_company_financing_origin_str"
+                    android:text="￥1000"
+                    android:textColor="@color/word_org" />
+
+                <TextView
+                    android:id="@+id/project_four_company_financing_progress_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/project_four_company_financing_origin_str"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/project_four_company_name"
+                    android:text="@string/financing_progress_str"
+                    android:textColor="@color/word_gray" />
+
+                <TextView
+                    android:id="@+id/project_four_company_financing_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/project_four_company_name"
+                    android:layout_alignBottom="@+id/project_four_company_name"
+                    android:layout_toRightOf="@+id/project_four_company_name"
+                    android:text="20%"
+                    android:textColor="@color/word_org" />
+
+                <ImageButton
+                    android:id="@+id/project_four_company_investment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/project_four_image"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/investment_button_pic" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

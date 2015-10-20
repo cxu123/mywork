@@ -73,14 +73,14 @@ public class ViewPageHelp {
 				+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH + File.separator;
 		ImageView one = new ImageView(context);
 		if (!(new File(sd_url + "back_1.png").exists())) {
-			one.setImageResource(R.drawable.nav_1);
+			one.setBackgroundResource(R.drawable.nav_1);
 		} else {
 			bitmapUtils.display(one, sd_url + "back_1.png");
 		}
 		imageViews.add(one);
 		ImageView tow = new ImageView(context);
 		if (!(new File(sd_url + "back_2.png").exists())) {
-			tow.setImageResource(R.drawable.nav_2);
+			tow.setBackgroundResource(R.drawable.nav_2);
 		} else {
 			bitmapUtils.display(tow, sd_url + "back_2.png");
 		}
@@ -88,7 +88,7 @@ public class ViewPageHelp {
 
 		ImageView three = new ImageView(context);
 		if (!(new File(sd_url + "back_3.png").exists())) {
-			three.setImageResource(R.drawable.nav_3);
+			three.setBackgroundResource(R.drawable.nav_3);
 		} else {
 			bitmapUtils.display(three, sd_url + "back_3.png");
 		}
@@ -96,7 +96,8 @@ public class ViewPageHelp {
 
 		ImageView four = new ImageView(context);
 		if (!(new File(sd_url + "back_4.png").exists())) {
-			four.setImageResource(R.drawable.nav_4);
+			four.setBackgroundResource(R.drawable.nav_4);
+			
 		} else {
 			bitmapUtils.display(four, sd_url + "back_4.png");
 		}
@@ -104,7 +105,7 @@ public class ViewPageHelp {
 
 		ImageView five = new ImageView(context);
 		if (!(new File(sd_url + "back_5.png").exists())) {
-			five.setImageResource(R.drawable.nav_5);
+			five.setBackgroundResource(R.drawable.nav_5);
 		} else {
 			bitmapUtils.display(five, sd_url + "back_5.png");
 		}
@@ -214,10 +215,9 @@ public class ViewPageHelp {
 	 * 设置flag的imagview变图片
 	 */
 	private void setFlagImageChange(int poiston) {
-		flagViews.get(poiston).setBackgroundColor(Color.DKGRAY);
+		flagViews.get(poiston).setBackgroundResource(R.drawable.circular_view_white);
 		if ((poiston != hasChageView)) {
-			flagViews.get(hasChageView).setBackgroundColor(
-					Color.parseColor("#FAA49E"));
+			flagViews.get(hasChageView).setBackgroundResource(R.drawable.circular_view_org);
 		}
 		hasChageView = poiston;
 	}

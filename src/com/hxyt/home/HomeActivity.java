@@ -31,8 +31,9 @@ import com.hxyt.user.UserRegisterFragment;
 import com.hxyt.user.UserRegisterFragment.UserRegisterLister;
 import com.hxyt.utils.L;
 import com.hxyt.utils.SPUtils;
+import com.hxyt.utils.T;
 
-public class Home_activity extends BaseFragmentActivity {
+public class HomeActivity extends BaseFragmentActivity {
 
 	private LinearLayout first;
 	private LinearLayout secend;
@@ -94,7 +95,7 @@ public class Home_activity extends BaseFragmentActivity {
 		two = (ImageButton) findViewById(R.id.btn_tab_bottom_friend);
 		three = (ImageButton) findViewById(R.id.btn_tab_bottom_contact);
 		image_four = (ImageButton) findViewById(R.id.btn_tab_bottom_setting);
-		fragmentManager = Home_activity.this.getSupportFragmentManager();
+		fragmentManager = HomeActivity.this.getSupportFragmentManager();
 		imageStrHome = (TextView) findViewById(R.id.home_home);
 		imageStrProject = (TextView) findViewById(R.id.home_project);
 		imageStrMy = (TextView) findViewById(R.id.home_my);
@@ -107,18 +108,7 @@ public class Home_activity extends BaseFragmentActivity {
 	@Override
 	protected void init(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		if (savedInstanceState == null) {
-			hideFragmentsAndChangeImage(1);
-		} else {
-			L.e("数据已经被恢复不用");
-			// nowButtonNo = savedInstanceState.getInt("nowButtonNo");
-			// hideFragmentsAndChangeImage(0);
-			// nowButtonNo = 0;
-			hideFragmentsAndChangeImage(savedInstanceState
-					.getInt("nowButtonNo"));
-			nowButtonNo = savedInstanceState.getInt("nowButtonNo");
-			hideFragmentAll();
-		}
+
 		/**
 		 * 用户登录接口
 		 */
@@ -167,6 +157,19 @@ public class Home_activity extends BaseFragmentActivity {
 				hideFragmentsAndChangeImage(3);
 			}
 		};
+		
+		if (savedInstanceState == null) {
+			hideFragmentsAndChangeImage(1);
+		} else {
+			L.e("数据已经被恢复不用");
+			// nowButtonNo = savedInstanceState.getInt("nowButtonNo");
+			// hideFragmentsAndChangeImage(0);
+			// nowButtonNo = 0;
+			hideFragmentsAndChangeImage(savedInstanceState
+					.getInt("nowButtonNo"));
+			nowButtonNo = savedInstanceState.getInt("nowButtonNo");
+			// hideFragmentAll();
+		}
 	}
 
 	@Override
@@ -543,7 +546,7 @@ public class Home_activity extends BaseFragmentActivity {
 		} else {
 			app = (AppContent) getApplication();
 		}
-
+		T.show(this, "Home Restart");
 		L.e("Home Restart");
 	}
 

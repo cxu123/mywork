@@ -58,9 +58,9 @@
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="1dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/head_content"
-        android:background="@drawable/shadow" />
+        android:background="#FFFFFF" />
 
 </RelativeLayout>

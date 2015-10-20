@@ -56,7 +56,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.hxyt.home.Home_activity" >
+        <activity android:name="com.hxyt.home.HomeActivity" >
         </activity>
         <activity android:name="com.hxyt.other.GuidanceActivity" />
         <activity android:name="com.hxyt.order.OrderInfoActivity" />
