@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectCommand {
+	
+	
+	/**
+	 * 客服中心电话号码
+	 */
+	public static final String US_PHONE_NUMBER="4000256756";
 
     public class ProjectFolder {
 

@@ -172,7 +172,7 @@
                     android:id="@+id/read_user_agreement"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="#FFFFFF"
+                    android:background="#F7F7F7"
                     android:text="@string/user_agreement_str"
                     android:textColor="@color/main_color"
                     android:textSize="12sp" />
@@ -212,7 +212,7 @@
                     android:id="@+id/goto_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
+                    android:background="#F7F7F7"
                     android:text="@string/gotoLogin"
                     android:textColor="@color/wrord_red"
                     android:textSize="18sp" />

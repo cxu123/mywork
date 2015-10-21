@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -27,9 +27,9 @@
         <item name="android:windowNoTitle">true</item>
         <!-- 无标题 -->
         <!-- <item name="android:windowBackground">@android:color/transparent</item> -->
-<!--         <item name="android:windowBackground">@color/statusbar_bg</item> -->
+        <!-- <item name="android:windowBackground">@color/statusbar_bg</item> -->
         <item name="android:windowBackground">@color/LucencyColor</item>
-       
+
         <!-- 自己想要的背景 -->
         <item name="android:backgroundDimEnabled">false</item>
         <!-- 0代表完全透明 1代表不透明 -->
@@ -45,9 +45,13 @@
     <style name="lager_textSize">
         <item name="android:textSize">18sp</item>
     </style>
+
     <style name="small_textSize">
         <item name="android:textSize">10sp</item>
     </style>
-   
-    
+
+    <style name="nature_textSize">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>

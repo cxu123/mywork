@@ -82,18 +82,20 @@ public class MainActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		makeFolder();
 		checkUpErrLog();
+		// 启动极光推送
+		JPushInterface.resumePush(getApplicationContext());
 		if (firstLogin == 0) {
 			openActivity(GuidanceActivity.class);
 		} else {
-			openActivity(GuidanceActivity.class);
+			// openActivity(GuidanceActivity.class);
+			openActivity(HomeActivity.class);
 		}
-		//启动极光推送
-		JPushInterface.resumePush(getApplicationContext());
+
 	}
 
 	private void checkUpErrLog() {
 		HttpJsonTool httpJsonTool = new HttpJsonTool(this);
-		//httpJsonTool.checkLogAndUpload(this);
+		// httpJsonTool.checkLogAndUpload(this);
 	}
 
 	// 创建app说需要的文件夹如app更新文件夹、app临时文件夹等
@@ -146,15 +148,14 @@ public class MainActivity extends BaseActivity {
 		gesture.setTouchEvent(ev);
 		return super.dispatchTouchEvent(ev);
 	}
-	
-	
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		JPushInterface.onResume(this);
 		super.onResume();
 	}
-	
+
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub

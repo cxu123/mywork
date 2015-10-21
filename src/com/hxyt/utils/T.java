@@ -78,9 +78,13 @@ public class T
 	public static void show(Context context, CharSequence message)
 	{
 		if (isShow)
-			Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+			Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
 	}
 	
+	public static void showShortToo(Context context, CharSequence message){
+		if (isShow)
+			Toast.makeText(context, message, 1).show();
+	}
 	
 	/**
 	 * 
