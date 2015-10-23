@@ -24,7 +24,7 @@ import android.widget.Toast;
  * @author 陈修园
  *
  */
-public class UserLoginFragement extends Fragment {
+public class UserLoginFragment extends Fragment {
 	private View rootView;
 
 	private Button user_login;
@@ -99,6 +99,7 @@ public class UserLoginFragement extends Fragment {
 								Toast.makeText(getActivity(),(String) msg.obj, Toast.LENGTH_SHORT).show();
 							}
 							loadingView.Viewdismiss();
+							userLogin.loginInfo();
 						}
 					});
 					userModel.userLogin(userName, userPassWord, getActivity());

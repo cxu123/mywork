@@ -25,8 +25,9 @@ import com.hxyt.news.ProductNewsFrament;
 import com.hxyt.order.OrderFragment;
 import com.hxyt.other.GuidanceActivity;
 import com.hxyt.other.UserAgreement;
-import com.hxyt.user.UserLoginFragement;
-import com.hxyt.user.UserLoginFragement.UserLogin;
+import com.hxyt.user.UserCenterFragment;
+import com.hxyt.user.UserLoginFragment;
+import com.hxyt.user.UserLoginFragment.UserLogin;
 import com.hxyt.user.UserRegisterFragment;
 import com.hxyt.user.UserRegisterFragment.UserRegisterLister;
 import com.hxyt.utils.L;
@@ -42,13 +43,17 @@ public class HomeActivity extends BaseFragmentActivity {
 	private FragmentManager fragmentManager;
 	// 现在变色的item
 	// 上一个点击的按钮
+	/**
+	 * 上一个点击的按钮
+	 * (上一个现实的UI)
+	 */
 	private int nowButtonNo = 0;
 	// 各个功能
 	private OrderFragment orderFragment;
 	private HomeFrament homeFrament;
 	private ProductNewsFrament productNewsFrament;
 	private UserRegisterFragment userRegionFragment;
-	private UserLoginFragement userLoginFragement;
+	private UserLoginFragment userLoginFragement;
 	private UserAgreement userAgreement;
 
 	private ImageButton one, two, three, image_four;
@@ -79,9 +84,14 @@ public class HomeActivity extends BaseFragmentActivity {
 	private TextView headtitle;
 
 	/**
-	 * UI 3 用户的多个情况的标记 1、用户登录UI 2、用户注册UI 3、用户协议UI
+	 * UI 3 用户的多个情况的标记 1、用户登录UI 2、用户注册UI 3、用户协议UI 4、用户中心
 	 */
 	private int userIntFlag = 1;
+
+	/**
+	 * 用户中心
+	 */
+	private UserCenterFragment userCenterFragment;
 
 	@Override
 	protected void findViews() {
@@ -118,6 +128,7 @@ public class HomeActivity extends BaseFragmentActivity {
 			public void loginInfo() {
 				// TODO Auto-generated method stub
 				L.v("用户登录成功");
+				hideFragmentsAndChangeImage(7);
 			}
 
 			@Override
@@ -157,7 +168,7 @@ public class HomeActivity extends BaseFragmentActivity {
 				hideFragmentsAndChangeImage(3);
 			}
 		};
-		
+
 		if (savedInstanceState == null) {
 			hideFragmentsAndChangeImage(1);
 		} else {
@@ -203,9 +214,9 @@ public class HomeActivity extends BaseFragmentActivity {
 	/**
 	 * UI显示隐藏处理事件
 	 * 
-	 * @param id
-	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 {3、包含的UI有 (5、注册 3、用户登录
-	 *            6、用户协议)}
+	 * @param id 
+	 *            1、首页 2、项目 3、用户 4、其他 5、注册 6、用户协议 7、用户信息 {3、包含的UI有 (5、注册 3、用户登录
+	 *            6、用户协议 7、用户信息)}
 	 * 
 	 */
 	private void hideFragmentsAndChangeImage(int id) {
@@ -269,6 +280,13 @@ public class HomeActivity extends BaseFragmentActivity {
 				three.setBackgroundResource(R.drawable.my);
 				imageStrMy.setTextColor(Color.parseColor("#1E1F1F"));
 				break;
+			case 7:
+				if (userCenterFragment != null) {
+					transaction.hide(userCenterFragment);
+				}
+				three.setBackgroundResource(R.drawable.my);
+				imageStrMy.setTextColor(Color.parseColor("#1E1F1F"));
+				break;
 			}
 
 			// 显示frament
@@ -306,7 +324,7 @@ public class HomeActivity extends BaseFragmentActivity {
 
 						transaction.show(userLoginFragement);
 					} else {
-						userLoginFragement = new UserLoginFragement();
+						userLoginFragement = new UserLoginFragment();
 						userLoginFragement.setUserLoginListener(userLogin);
 						transaction.add(R.id.id_content, userLoginFragement);
 					}
@@ -340,6 +358,19 @@ public class HomeActivity extends BaseFragmentActivity {
 					three.setBackgroundResource(R.drawable.my_selecte);
 					imageStrMy.setTextColor(Color.parseColor(checkColor));
 					// break;
+				} else if (userIntFlag == 4) {
+
+					if (userCenterFragment != null) {
+						transaction.show(userCenterFragment);
+					} else {
+						userCenterFragment = new UserCenterFragment();
+						transaction.add(R.id.id_content, userAgreement);
+					}
+
+					id = 7;
+					userCenterIni();
+					three.setBackgroundResource(R.drawable.my_selecte);
+					imageStrMy.setTextColor(Color.parseColor(checkColor));
 				}
 
 				break;
@@ -379,6 +410,17 @@ public class HomeActivity extends BaseFragmentActivity {
 				three.setBackgroundResource(R.drawable.my_selecte);
 				imageStrMy.setTextColor(Color.parseColor(checkColor));
 				break;
+
+			case 7:
+				if (userCenterFragment != null) {
+					transaction.show(userCenterFragment);
+				} else {
+					userCenterFragment = new UserCenterFragment();
+					transaction.add(R.id.id_content, userCenterFragment);
+				}
+				userCenterIni();
+				three.setBackgroundResource(R.drawable.my_selecte);
+				imageStrMy.setTextColor(Color.parseColor(checkColor));
 			}
 
 			transaction.commit();
@@ -518,6 +560,16 @@ public class HomeActivity extends BaseFragmentActivity {
 				hideFragmentsAndChangeImage(5);
 			}
 		});
+	}
+
+	/**
+	 * 用户中心初始化
+	 */
+	private void userCenterIni() {
+		userIntFlag = 4;
+		headImage.setVisibility(View.INVISIBLE);
+		headLeft.setText("");
+		headtitle.setText("个人中心");
 	}
 
 	/**

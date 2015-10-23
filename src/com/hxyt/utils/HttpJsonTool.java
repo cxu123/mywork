@@ -533,7 +533,6 @@ public class HttpJsonTool {
 	}
 	fileName = url.substring(url.lastIndexOf(File.separator) + 1);
 	sd_path = rootpath + File.separator
-		+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
 		+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH + File.separator
 		+ fileName;
 	// http.dow

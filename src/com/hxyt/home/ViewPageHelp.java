@@ -61,16 +61,14 @@ public class ViewPageHelp {
 		this.viewpage = viewpage;
 		this.flagLayout = flagLayout;
 		bitmapUtils = new BitmapUtils(context, SDCardUtils.getSDCardPath()
-				+ File.separator + ProjectCommand.ProjectFolder.ROOT_FOLDER
 				+ File.separator + ProjectCommand.ProjectFolder.TMP_FILE_PATH);
 		init();
 	}
 
 	private void init() {
 		// TODO Auto-generated method stub
-		String sd_url = SDCardUtils.getSDCardPath() + File.separator
-				+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
-				+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH + File.separator;
+		String sd_url = SDCardUtils.getSDCardPath()
+				+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH;
 		ImageView one = new ImageView(context);
 		if (!(new File(sd_url + "back_1.png").exists())) {
 			one.setBackgroundResource(R.drawable.nav_1);
@@ -97,7 +95,7 @@ public class ViewPageHelp {
 		ImageView four = new ImageView(context);
 		if (!(new File(sd_url + "back_4.png").exists())) {
 			four.setBackgroundResource(R.drawable.nav_4);
-			
+
 		} else {
 			bitmapUtils.display(four, sd_url + "back_4.png");
 		}
@@ -199,7 +197,7 @@ public class ViewPageHelp {
 							handler.sendMessage(msg);
 						}
 						newimageview++;
-						
+
 					}
 
 				}
@@ -215,9 +213,11 @@ public class ViewPageHelp {
 	 * 设置flag的imagview变图片
 	 */
 	private void setFlagImageChange(int poiston) {
-		flagViews.get(poiston).setBackgroundResource(R.drawable.circular_view_white);
+		flagViews.get(poiston).setBackgroundResource(
+				R.drawable.circular_view_white);
 		if ((poiston != hasChageView)) {
-			flagViews.get(hasChageView).setBackgroundResource(R.drawable.circular_view_org);
+			flagViews.get(hasChageView).setBackgroundResource(
+					R.drawable.circular_view_org);
 		}
 		hasChageView = poiston;
 	}
@@ -247,10 +247,8 @@ public class ViewPageHelp {
 	 */
 	public void changeViewPagerImage() {
 		if (SDCardUtils.isSDCardEnable()) {
-			String url = SDCardUtils.getSDCardPath() + File.separator
-					+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
-					+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH
-					+ File.separator;
+			String url = SDCardUtils.getSDCardPath()
+					+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH;
 			bitmapUtils.display(imageViews.get(0), url + "back_1.png");
 			bitmapUtils.display(imageViews.get(1), url + "back_2.png");
 			bitmapUtils.display(imageViews.get(2), url + "back_3.png");

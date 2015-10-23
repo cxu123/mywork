@@ -58,9 +58,19 @@
         </activity>
         <activity android:name="com.hxyt.home.HomeActivity" >
         </activity>
-        <activity android:name="com.hxyt.other.GuidanceActivity" />
-        <activity android:name="com.hxyt.order.OrderInfoActivity" />
+        <activity android:name="com.hxyt.other.GuidanceActivity" >
+        </activity>
+        <activity android:name="com.hxyt.order.OrderInfoActivity" >
+        </activity>
         <activity android:name="com.hxyt.other.testActivity" >
+        </activity>
+        <activity android:name="com.hxyt.user.UserDataActivity" >
+        </activity>
+        <activity android:name="com.hxyt.user.UserAccountActivity" >
+        </activity>
+        <activity android:name="com.hxyt.user.ResetPassWordActivity" >
+        </activity>
+        <activity android:name="com.hxyt.user.pay.UserWithdrawDepositActivity" >
         </activity>
         <activity
             android:name="com.baofoo.sdk.BaofooPayActivity"

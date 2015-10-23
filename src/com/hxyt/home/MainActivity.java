@@ -106,18 +106,15 @@ public class MainActivity extends BaseActivity {
 			File root = new File(rootFolder
 					+ ProjectCommand.ProjectFolder.ROOT_FOLDER);
 			File download = new File(rootFolder
-					+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
 					+ ProjectCommand.ProjectFolder.IMAGE_FILE_PATH);
 			File log = new File(rootFolder
-					+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
 					+ ProjectCommand.ProjectFolder.LOG_FILE_PATH);
 			File temp = new File(rootFolder
-					+ ProjectCommand.ProjectFolder.ROOT_FOLDER + File.separator
 					+ ProjectCommand.ProjectFolder.TMP_FILE_PATH);
-			// L.v("root="+root.getPath());
-			// L.v("download="+download.getPath());
-			// L.v("log="+log.getPath());
-			// L.v("temp="+temp.getPath());
+			 L.v("root="+root.getPath());
+			 L.v("download="+download.getPath());
+			 L.v("log="+log.getPath());
+			 L.v("temp="+temp.getPath());
 			//
 			if (!root.exists()) {
 				// root.

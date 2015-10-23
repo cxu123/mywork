@@ -144,14 +144,17 @@ public abstract class BaseActivity extends Activity {
 
 	public void finishActivity() {
 
-		this.finish();
+
 		overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
+		app.appManager.finishActivity(this);
 	}
 
 	@Override
 	public void finish() {
 		// TODO Auto-generated method stub
 
+		
+		
 		super.finish();
 		overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
 	}
@@ -163,14 +166,14 @@ public abstract class BaseActivity extends Activity {
 		overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
 		// super.startActivity(intent);
 	}
-	
+
 	@Override
 	protected void onRestart() {
 		// TODO Auto-generated method stub
 		super.onRestart();
-		if (app==null) {
+		if (app == null) {
 			app = (AppContent) getApplication();
 		}
 	}
-	
+
 }

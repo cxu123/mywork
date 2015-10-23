@@ -185,7 +185,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/yellow_circular_bead"
+                android:background="@drawable/circular_view_background_org"
                 android:padding="10dp"
                 android:text="@string/reg_but_str"
                 android:textColor="#FFFFFF"

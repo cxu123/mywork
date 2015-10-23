@@ -1,5 +1,6 @@
 package com.hxyt;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class ProjectCommand {
 	 */
 	public static final String US_PHONE_NUMBER="4000256756";
 
-    public class ProjectFolder {
+    public static class ProjectFolder {
 
 	/**
 	 * 文件Log文件上传路径
@@ -21,12 +22,12 @@ public class ProjectCommand {
 	/**
 	 * 下载下来保存的路径
 	 */
-	public static final String IMAGE_FILE_PATH = "DownLoad";
+	public static final String IMAGE_FILE_PATH =  ProjectCommand.ProjectFolder.ROOT_FOLDER+File.separator+"DownLoad"+File.separator;
 
 	/**
 	 * 临时文件夹
 	 */
-	public static final String TMP_FILE_PATH = "Temp";
+	public static final String TMP_FILE_PATH = ProjectCommand.ProjectFolder.ROOT_FOLDER+File.separator+"Temp"+File.separator;
 
 	/**
 	 * 根文件夹汇信银投
@@ -36,7 +37,7 @@ public class ProjectCommand {
 	/**
 	 * APP运行报错Log
 	 */
-	public static final String LOG_FILE_PATH = "Log";
+	public static final String LOG_FILE_PATH =  ProjectCommand.ProjectFolder.ROOT_FOLDER+File.separator+"Log"+File.separator;
 	
 	/**
 	 * APP从服务器下载的路径

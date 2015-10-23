@@ -1,6 +1,7 @@
 package com.hxyt.news;
 
 import com.hxyt.R;
+import com.hxyt.baofoo.BaoFooPayUtils;
 import com.hxyt.utils.DownLoadAPP;
 
 import android.content.Intent;
@@ -26,6 +27,8 @@ public class ProductNewsFrament extends Fragment {
 
 	private Button downLoadAPK;
 
+	private Button pay;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class ProductNewsFrament extends Fragment {
 			View view = inflater.inflate(R.layout.fragment_product_news,
 					container, false);
 			downLoadAPK=(Button) view.findViewById(R.id.down);
+			pay=(Button) view.findViewById(R.id.pay);
 			ini();
 			return view;
 		}
@@ -57,6 +61,15 @@ public class ProductNewsFrament extends Fragment {
 			}
 		});
 		
+		
+		pay.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				BaoFooPayUtils baoFooPayUtils=new BaoFooPayUtils(null, getActivity());
+			}
+		});
 	}
 	
 	

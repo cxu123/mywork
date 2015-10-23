@@ -39,6 +39,15 @@ public class AppContent extends Application {
 	public static PreferencesCookieStore preferencesCookieStore;
 	
 	public ViewPageHelp viewPageHelp;
+	/**
+	 * 用户头像的图片路径
+	 */
+	public String user_head_image_paht="";
+	/**
+	 * 用户图片的路径是否改变
+	 */
+	public boolean user_head_image_has_change=false;
+	
 	
 	@Override
 	public void onCreate() {
@@ -61,6 +70,9 @@ public class AppContent extends Application {
 	public static PreferencesCookieStore getPreferencesCookieStore(){
 		return AppContent.preferencesCookieStore;
 	}
+	
+	
+	
 	
 	/**
 	 * 下载服务器网络图片
